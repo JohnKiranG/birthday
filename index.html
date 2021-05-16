@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link href='https://fonts.googleapis.com/css?family=Content' rel='stylesheet'>
+      <style>         
+         body{
+            display: flex;
+            background-color: hsl(0, 0%, 94%);
+            justify-content: center;
+            align-content: center;
+         }
+         .main_header {     
+            position: absolute;    
+            top: 50%;
+            place-items: center;
+            transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            text-align: center;
+            font-size: 5vw;
+            font-family: "Kristi", cursive;
+         }
+         .center_div {
+            font-size: 5vw;
+         }
+         table{
+            width: 100%;
+         }
+         td{
+            border: 1px solid;
+         }
+      </style>
+   </head>
+   <body>
+      <audio src="birthdaySong.mp3" loop id="song"></audio> 
+      
+      <div>
+         Made with <span style="color: red">&hearts;</span> by John Kiran
+      </div>
+      <div class="main_header">
+         <div class="center_div">
+            Happy Birthday
+         </div>      
+         <!-- <div>
+            <span id="nameDiv" hidden>🎂<span id="name">Prabhu</span>🎂</span>
+            <table style="width: 100%;">
+               <tr>
+                  <td>🎂</td>
+                  <td><span id="name"></span></td>
+                  <td>🎂</td>
+               </tr>
+            </table>
+         </div> -->
+         <div style="display: flex; flex-direction: row; align-content: center;">
+            <div style="flex:2; width:10%;">🎂</div>
+            <div style="flex:2; flex-wrap: wrap"><span id="name"></span></div>
+            <div style="flex:2;">🎂</div>
+         </div>
+         <!-- <div style="justify-content: center;">
+            <table id="nameDiv" hidden>
+               <tr>
+                  <td style="width: 10px;">🎂</td>
+                  <td style="word-wrap: break-word;"><span id="name"></span></td>
+                  <td style="width: 10px;">🎂</td>
+               </tr>
+            </table>
+         </div> -->
+         <div>
+            <button style="background-color: rgb(206, 218, 45)" onclick="play()">Click me for <span style="font-weight: bold">&#127925;</span></button>
+         </div>
+      </div>
+      <script src="./confetti.js"></script>
+      <script>
+         confetti.start();
+         var url_string = window.location.href;
+         var url = new URL(url_string);
+         var name = url.searchParams.get("name");
+         
+         if(name != "null" && name != undefined && name != "" && name != null) {
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("nameDiv").style.display = "block";
+         }
+         function play() {
+            document.getElementById("song").play(); 
+         }
+         
+      </script>
+   </body>
+</html>
