@@ -5,6 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
       <link href='https://fonts.googleapis.com/css?family=Content' rel='stylesheet'>
+      <!-- Jquery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
       <style>         
          body{
             display: flex;
@@ -42,45 +45,43 @@
       <div class="main_header">
          <div class="center_div">
             Happy Birthday
-         </div>      
-         <!-- <div>
-            <span id="nameDiv" hidden>🎂<span id="name">Prabhu</span>🎂</span>
-            <table style="width: 100%;">
-               <tr>
-                  <td>🎂</td>
-                  <td><span id="name"></span></td>
-                  <td>🎂</td>
-               </tr>
-            </table>
-         </div> -->
+         </div>
+         
          <div style="display: flex; flex-direction: row; align-content: center;">
             <div style="flex:2; width:10%;">🎂</div>
             <div style="flex:2; flex-wrap: wrap"><span id="name"></span></div>
             <div style="flex:2;">🎂</div>
          </div>
-         <!-- <div style="justify-content: center;">
-            <table id="nameDiv" hidden>
-               <tr>
-                  <td style="width: 10px;">🎂</td>
-                  <td style="word-wrap: break-word;"><span id="name"></span></td>
-                  <td style="width: 10px;">🎂</td>
-               </tr>
-            </table>
-         </div> -->
+        
          <div>
             <button style="background-color: rgb(206, 218, 45)" onclick="play()">Click me for <span style="font-weight: bold">&#127925;</span></button>
          </div>
       </div>
+
+      <div class="chocoAnimate" 
+      ></div>
+
       <script src="./confetti.js"></script>
+      <script src="./chocoAnimate.js"></script>
+
       <script>
-         confetti.start();
+         let targetNumber = Math.floor(Math.random() * 2) + 1;
+
+         switch(targetNumber) {
+            case 1:
+               $(".chocoAnimate").attr('id', 'chocoAnimate');        
+               startChocAnimation();
+               break;
+            default:
+               confetti.start();
+         }
+
          var url_string = window.location.href;
          var url = new URL(url_string);
          var name = url.searchParams.get("name");
          
          if(name != "null" && name != undefined && name != "" && name != null) {
             document.getElementById("name").innerHTML = name;
-            document.getElementById("nameDiv").style.display = "block";
          }
          function play() {
             document.getElementById("song").play(); 
