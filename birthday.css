@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    background-color: hsl(0, 0%, 94%);
+    justify-content: center;
+    align-content: center;
+ }
+ 
+.customCard {
+    padding: 0.01em 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.main_header {     
+    position: absolute;    
+    top: 50%;
+    place-items: center;
+    transform: translateY(-60%);    
+    text-align: center;
+    font-size: 5vw;
+    font-family: "Kristi", cursive;
+    z-index: 500;
+    background-color: lavender;
+}
+
+.center_div {
+    font-size: 5vw;
+}
+
+.imageRotateHorizontal{
+    animation: spinHorizontal 2s infinite linear;
+}
+
+@keyframes spinHorizontal {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}

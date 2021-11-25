@@ -4,37 +4,15 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
-      <link href='https://fonts.googleapis.com/css?family=Content' rel='stylesheet'>
-      <!-- Jquery -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-      <style>         
-         body{
-            display: flex;
-            background-color: hsl(0, 0%, 94%);
-            justify-content: center;
-            align-content: center;
-         }
-         .main_header {     
-            position: absolute;    
-            top: 50%;
-            place-items: center;
-            transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            text-align: center;
-            font-size: 5vw;
-            font-family: "Kristi", cursive;
-         }
-         .center_div {
-            font-size: 5vw;
-         }
-         table{
-            width: 100%;
-         }
-         td{
-            border: 1px solid;
-         }
-      </style>
+      <!-- style sheets -->
+      <!-- font -->
+      <link href='https://fonts.googleapis.com/css?family=Content' rel='stylesheet'>
+      <!-- custom style sheet -->
+      <link href='birthday.css' rel='stylesheet'>
+
+      <!-- Jquery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
    </head>
    <body>
       <audio src="birthdaySong.mp3" loop id="song"></audio> 
@@ -42,15 +20,16 @@
       <div>
          Made with <span style="color: red">&hearts;</span> by John Kiran
       </div>
-      <div class="main_header">
+
+      <div class="main_header customCard">
          <div class="center_div">
             Happy Birthday
          </div>
          
          <div style="display: flex; flex-direction: row; align-content: center;">
-            <div style="flex:2; width:10%;">🎂</div>
+            <div style="flex:2; width:10%;" class="imageRotateHorizontal">🎂</div>
             <div style="flex:2; flex-wrap: wrap"><span id="name"></span></div>
-            <div style="flex:2;">🎂</div>
+            <div style="flex:2;" class="imageRotateHorizontal">🎂</div>
          </div>
         
          <div>
@@ -58,19 +37,23 @@
          </div>
       </div>
 
-      <div class="chocoAnimate" 
-      ></div>
+      <div class="chocoAnimate"></div>
 
       <script src="./confetti.js"></script>
       <script src="./chocoAnimate.js"></script>
 
       <script>
-         let targetNumber = Math.floor(Math.random() * 2) + 1;
+         let targetNumber = Math.floor(Math.random() * 3) + 1;
 
          switch(targetNumber) {
             case 1:
                $(".chocoAnimate").attr('id', 'chocoAnimate');        
                startChocAnimation();
+               break;
+            case 2:
+               $(".chocoAnimate").attr('id', 'chocoAnimate');        
+               startChocAnimation();
+               confetti.start();
                break;
             default:
                confetti.start();
