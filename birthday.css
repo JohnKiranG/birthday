@@ -1,31 +1,63 @@
 body{
-    display: flex;
-    background-color: hsl(0, 0%, 94%);
-    justify-content: center;
-    align-content: center;
+    text-align: center;
+    background-color: hsl(0, 0%, 94%); 
  }
  
-.customCard {
-    padding: 0.01em 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+.container { 
+    position: relative;
+    /* The below change kept to center in laptop but not in mobile */
+    /* display:flex; position:absolute; top:0; bottom:0; right:0; left:0;  */
 }
 
-.main_header {     
-    position: absolute;    
-    top: 50%;
-    place-items: center;
-    transform: translateY(-60%);    
-    text-align: center;
-    font-size: 5vw;
-    font-family: "Kristi", cursive;
+.center {
+    margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+    /* The below change kept to center in laptop but not in mobile */
+    /* margin: auto; */
+  }
+
+.customCard {
+    padding: 0.01em 16px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     z-index: 500;
+    font-family: "Kristi", cursive;
+}
+
+.nameDiv {
+    display: flex; flex-direction: row; align-content: center;
+}
+
+.card_bg_color {
     background-color: lavender;
 }
 
-.center_div {
-    font-size: 5vw;
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+    .text_size {
+      font-size: 5vw;
+    }
+
+    .text_size2 {
+        font-size: 2vw;
+    }
+
+    .container {
+        height: 85vh;
+    }
+}
+  
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    .text_size {
+        font-size: 8vw;
+    }
+
+    .text_size2 {
+        font-size: 5vw;
+    }
+
+    .container {
+        height: 55vh;
+    }
 }
 
 .imageRotateHorizontal{

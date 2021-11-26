@@ -17,25 +17,23 @@
    <body>
       <audio src="birthdaySong.mp3" loop id="song"></audio> 
       
-      <div>
+      <div class="text_size2">
          Made with <span style="color: red">&hearts;</span> by John Kiran
       </div>
 
-      <div class="main_header customCard">
-         <div class="center_div">
-            Happy Birthday
+      <div class="container">
+         <div class="center customCard text_size card_bg_color">
+            Happy&nbsp;Birthday
+
+            <div class="nameDiv">
+               <div style="flex:2; width:10%;" class="imageRotateHorizontal">🎂</div>
+               <div style="flex:2; flex-wrap: wrap"><span id="name"></span></div>
+               <div style="flex:2;" class="imageRotateHorizontal">🎂</div>
+            </div>
+
+            <button style="background-color: rgb(206, 218, 45); margin: 5px;" onclick="play()">Click me for <span style="font-weight: bold">&#127925;</span></button>
          </div>
-         
-         <div style="display: flex; flex-direction: row; align-content: center;">
-            <div style="flex:2; width:10%;" class="imageRotateHorizontal">🎂</div>
-            <div style="flex:2; flex-wrap: wrap"><span id="name"></span></div>
-            <div style="flex:2;" class="imageRotateHorizontal">🎂</div>
-         </div>
-        
-         <div>
-            <button style="background-color: rgb(206, 218, 45)" onclick="play()">Click me for <span style="font-weight: bold">&#127925;</span></button>
-         </div>
-      </div>
+       </div>
 
       <div class="chocoAnimate"></div>
 
