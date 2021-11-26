@@ -16,7 +16,7 @@ body{
   }
 
 .customCard {
-    padding: 0.01em 16px;
+    padding: 1.01em 20px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     z-index: 500;
     font-family: "Kristi", cursive;
@@ -48,7 +48,7 @@ body{
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
     .text_size {
-        font-size: 8vw;
+        font-size: 11vw;
     }
 
     .text_size2 {
