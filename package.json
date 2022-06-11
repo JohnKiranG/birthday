@@ -1,0 +1,23 @@
+{
+  "name": "birthday",
+  "version": "1.0.0",
+  "description": "",
+  "main": "expressServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnKiranG/birthday.git"
+  },
+  "author": "johnkirang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnKiranG/birthday/issues"
+  },
+  "homepage": "https://github.com/JohnKiranG/birthday#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
